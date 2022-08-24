@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Olstertecn11/ClinicaDental/static/css/main.7052faea.css",
+    "main.css": "/Olstertecn11/ClinicaDental/static/css/main.16008db1.css",
     "main.js": "/Olstertecn11/ClinicaDental/static/js/main.331f5c8b.js",
     "index.html": "/Olstertecn11/ClinicaDental/index.html",
-    "main.7052faea.css.map": "/Olstertecn11/ClinicaDental/static/css/main.7052faea.css.map",
+    "main.16008db1.css.map": "/Olstertecn11/ClinicaDental/static/css/main.16008db1.css.map",
     "main.331f5c8b.js.map": "/Olstertecn11/ClinicaDental/static/js/main.331f5c8b.js.map"
   },
   "entrypoints": [
-    "static/css/main.7052faea.css",
+    "static/css/main.16008db1.css",
     "static/js/main.331f5c8b.js"
   ]
 }

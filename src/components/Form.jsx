@@ -1,8 +1,25 @@
 import './style/Form.css';
+import emailjs from "emailjs-com";
+import { useRef } from 'react';
 
 
 export default function Form() {
 
+
+    
+
+    const sendEmail = (e)=>{
+      e.preventDefault();
+
+      emailjs.sendForm('service_t3lm6cg', 'template_pi4jjid', e.target, 'a2DG14lDuzHz2Enzj')
+	  .then((result)=>{
+	    console.log(result.text);
+	  },
+	  (error)=>{
+	    console.log(error.text);
+	  });
+      e.target.reset();
+    }
 
 
     return (
@@ -10,29 +27,37 @@ export default function Form() {
             <div className="container mt-4">
                 <div className="row">
                     <div className="col-md-4">
-                        <div className="card card-body mt-4 shadow p-3 mb-5 bg-white rounded">
+                        <form onSubmit={sendEmail} 
+			    className="card card-body mt-4 shadow p-3 mb-5 bg-white rounded">
                             <div className="form-group">
                                 <label htmlFor="name">Nombre</label>
-                                <input type="text" placeholder="Ingrese su nombre" autoComplete='none' id="name" className="form-control" />
+                                <input type="text" placeholder="Ingrese su nombre" 
+				    autoComplete='none' 
+				    id="name"
+				    name="name"
+				    className="form-control" />
                             </div>
                             <div className="form-group">
                                 <label htmlFor="name">Telefono</label>
-                                <input type="text" placeholder="Ingrese su nombre" autoComplete='none' id="name" className="form-control" />
+                                <input type="text" 
+				    placeholder="Numero numero de telefono" autoComplete='none' 
+				    id="name" name="phone" className="form-control" />
                             </div>
                             <div className="form-group">
                                 <label htmlFor="name">Email</label>
-                                <input type="email" placeholder="Ingrese su nombre"  autoComplete='none'id="name" className="form-control" />
+                                <input type="email" placeholder="Ingrese su correo electronico"
+				    autoComplete='none'id="name" className="form-control"
+				    name="email"/>
                             </div>
                             <div className="form-group">
                                 <label htmlFor="name">Mensaje</label>
-                                <textarea className="form-control" id="mensaje" autoComplete='none' cols="30" rows="10"></textarea>
+                                <textarea name="message"className="form-control" id="mensaje" 
+				    autoComplete='none' cols="30" placeholder='Mensaje' rows="10"></textarea>
                             </div>
                             <div className="form-group">
-                                <button className="btn btn-block">
-                                    Enviar
-                                </button>
+				<input type="submit" value="Enviar" className='btn btn-block'/>
                             </div>
-                        </div>
+                        </form>
                     </div>
                     <div className="col-md-6 ml-4 mt-4">
                         <div className="card-body schedule rounded">
